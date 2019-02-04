@@ -109,6 +109,7 @@
 			<version>1.2</version>
 		</dependency>
 		
+		<!-- spring-test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
