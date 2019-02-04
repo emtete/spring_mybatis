@@ -20,18 +20,18 @@ public class JDBCTests {
 		}
 	}
 	
-	@Test
-	public void testConnection() {
-		
-		Try(Connection con = 
-			DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:59161:xe",
-				"system",
-				"oracle")){
-			
-			log.info(con);
-		} catch (Exception e) {
-			fail(e.getMessage());
-		}
-	}
+//	@Test
+//	public void testConnection() {
+//		
+//		Try(Connection con = 
+//			DriverManager.getConnection(
+//				"jdbc:oracle:thin:@localhost:59161:xe",
+//				"system",
+//				"oracle")){
+//			
+//			log.info(con);
+//		} catch (Exception e) {
+//			fail(e.getMessage());
+//		}
+//	}
 }
