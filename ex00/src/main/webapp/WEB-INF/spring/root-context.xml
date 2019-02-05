@@ -9,11 +9,22 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+	<!-- <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name = "driverClassName" value = "oracle.jdbc.driver.OracleDriver" />
+		<property name = "jdbcUrl" value = "jdbc:oracle:thin:@localhost:59161:xe" />
 		<property name = "username" value = "system" />
 		<property name = "password" value = "oracle" />
-		<property name = "jdbcUrl" value = "jdbc:oracle:thin:@localhost:59161:xe" />
+	</bean> -->
+	
+	
+		
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+   <!-- <property name = "driverClassName" value = "oracle.jdbc.driver.OracleDriver" /> -->
+		<property name = "driverClassName" value = "net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+   <!-- <property name = "jdbcUrl" value = "jdbc:oracle:thin:@localhost:59161:xe" /> -->
+		<property name = "jdbcUrl" value = "jdbc:log4jdbc:oracle:thin:@localhost:59161:xe" />
+		<property name = "username" value = "system" />
+		<property name = "password" value = "oracle" />
 	</bean>
 		
 	<!-- hikariCP configuration -->
