@@ -1,2 +1,4 @@
 # spring_mybatis
-spring_mybatis 연동관련 예제와 단어정리.
+
+Mapper xml파일에는 태그에 대한 설정이 필요하다.
+참조 : http://www.mybatis.org/mybatis-3/ko/sqlmap-xml.html
