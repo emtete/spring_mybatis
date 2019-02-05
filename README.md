@@ -1,4 +1,13 @@
 # spring_mybatis
 
-Mapper xml파일에는 태그에 대한 설정이 필요하다.
-참조 : http://www.mybatis.org/mybatis-3/ko/sqlmap-xml.html
+날짜별 작업목록
+
+-2019.02.05 <br/>
+logLevelSetting <br/>
+log4jdbc Test <br/>
+Mapper.xml Test <br/>
+Mapper Interface Test <br/>
+
+
+
+
