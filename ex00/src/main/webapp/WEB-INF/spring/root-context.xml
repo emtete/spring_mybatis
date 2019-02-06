@@ -8,16 +8,22 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
 		
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
    <!-- <property name = "driverClassName" value = "oracle.jdbc.driver.OracleDriver" /> -->
-		<!-- <property name = "driverClassName" value = "net.sf.log4jdbc.sql.jdbcapi.DriverSpy" /> -->
-		<property name = "driverClassName" value = "org.mariadb.jdbc.Driver" />
    <!-- <property name = "jdbcUrl" value = "jdbc:oracle:thin:@localhost:59161:xe" /> -->
-		<!-- <property name = "jdbcUrl" value = "jdbc:log4jdbc:oracle:thin:@localhost:59161:xe" /> -->
+		
+		<property name = "driverClassName" value = "${jdbc.driverClassName}" />
+		<property name = "jdbcUrl" value = "${jdbc.jdbcUrl}" />
+		<property name = "username" value = "${jdbc.username}" />
+		<property name = "password" value = "${jdbc.password}" />
+		
+		<!-- <property name = "driverClassName" value = "org.mariadb.jdbc.Driver" />
 		<property name = "jdbcUrl" value = "jdbc:mariadb://localhost:3306/testdb" />
 		<property name = "username" value = "root" />
-		<property name = "password" value = "12345" />
+		<property name = "password" value = "12345" /> -->
+		
 	</bean>
 		
 	<!-- hikariCP configuration -->
@@ -29,8 +35,7 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
+	
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>
-	
 	<context:component-scan base-package="org.zerock.sample" />
-	
 </beans>
