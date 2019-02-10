@@ -94,15 +94,20 @@ public class SampleTests {
 		}
 	}
 	
-	@Test
+//	@Test
 	public void mapperInterfaceTest() {
 		
-		log.info( sampleMapper.getTime() );
+		log.info( sampleMapper.getTime2() );
 		log.info( sampleMapper.getClass().getName() );
 		
 	}
 	
-	
+//	@Test
+	public void mapperXmlTest() {
+		
+		log.info( sampleMapper.getTime() );
+		log.info( sampleMapper.getClass().getName() );
+	}
 	
 }
 
