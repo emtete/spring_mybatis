@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.victor.mapper.BoardMapper">
+
+	<select id="getList">
+		<![CDATA[
+		select * from tbl_board
+		]]>
+	</select>
+	
+	
+	<select id="read">
+		select * from tbl_board where bno=#{bno}
+	</select>
+	
+	
+	<insert id="insert">
+		insert into tbl_board( bno, title, content, writer )
+		values ( seq_board.nextval, #{title}, #{content}, #{writer} )
+	</insert>
+	
+	
+	<insert id="insertSelectKey">
+	
+		<selectKey keyProperty="bno" order="BEFORE" resultType="Long">
+			select seq_board.nextval from dual
+		</selectKey> 
+		
+		insert into tbl_board( bno, title, content, writer )
+		values ( #{bno}, #{title}, #{content}, #{writer} )
+	
+	</insert>
+	
+	
+	<update id="update">
+		update tbl_board set 
+			title='수정 타이틀', 
+			content='수정 내용', 
+			writer='수정 작성자', 
+			updateDate=sysdate 
+		where bno = #{bno}
+	</update>
+	
+	
+	<delete id="delete">
+		delete tbl_board where bno = #{bno};
+	</delete>	 
+</mapper>
+
+
+<!-- 
+
+select * from tbl_board;
+
+select * from tbl_board where bno=4;
+
+
+insert into tbl_board( bno, title, content, writer )
+values ( seq_board.nextval, '테스트 타이틀', '테스트 내용', '테스트 작성자' );
+
+update tbl_board set title='수정 타이틀', content='수정 내용', writer='수정 작성자', updateDate=sysdate where bno=49;
+
+delete tbl_board where bno=49;
+
+ -->
