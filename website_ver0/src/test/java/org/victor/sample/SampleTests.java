@@ -15,6 +15,8 @@ import java.sql.DriverManager;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -28,6 +30,9 @@ public class SampleTests {
 	
 	@Setter( onMethod_ = @Autowired )
 	private DataSource dataSource;
+	
+	@Setter( onMethod_ = {@Autowired} )
+	private SqlSessionFactory sqlSessionFactory;
 	
 	
 //	@Test
@@ -61,7 +66,7 @@ public class SampleTests {
 	}
 	
 	
-	@Test
+//	@Test
 	public void jdbcTests() {
 		
 		try( Connection con = dataSource.getConnection() ){
@@ -70,6 +75,20 @@ public class SampleTests {
 			fail(e.getMessage());
 		}
 		
+	}
+	
+	@Test
+	public void sqlSessionTest() {
+		
+		try(	SqlSession sqlSession = sqlSessionFactory.openSession();
+				Connection con = sqlSession.getConnection();
+				){
+			log.info(sqlSession);
+			log.info(con);
+			
+		} catch(Exception e) {
+			fail(e.getMessage());
+		}
 	}
 	
 	
