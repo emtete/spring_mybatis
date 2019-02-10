@@ -34,6 +34,9 @@ public class SampleTests {
 	@Setter( onMethod_ = {@Autowired} )
 	private SqlSessionFactory sqlSessionFactory;
 	
+	@Setter( onMethod_ = {@Autowired} )
+	private SampleMapper sampleMapper;
+	
 	
 //	@Test
 	public void diTest() {
@@ -77,7 +80,7 @@ public class SampleTests {
 		
 	}
 	
-	@Test
+//	@Test
 	public void sqlSessionTest() {
 		
 		try(	SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -89,6 +92,14 @@ public class SampleTests {
 		} catch(Exception e) {
 			fail(e.getMessage());
 		}
+	}
+	
+	@Test
+	public void mapperInterfaceTest() {
+		
+		log.info( sampleMapper.getTime() );
+		log.info( sampleMapper.getClass().getName() );
+		
 	}
 	
 	
