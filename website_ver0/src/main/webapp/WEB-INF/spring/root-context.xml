@@ -7,5 +7,5 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<context:component-scan base-package="file:"></context:component-scan>
+	<context:component-scan base-package="org.victor.sample"></context:component-scan>
 </beans>
