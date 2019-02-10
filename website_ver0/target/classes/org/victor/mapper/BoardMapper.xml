@@ -4,14 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.victor.mapper.BoardMapper">
 
-	<select id="getList">
+	<select id="getList" resultType="org.victor.domain.BoardVO">
 		<![CDATA[
 		select * from tbl_board
 		]]>
 	</select>
 	
 	
-	<select id="read">
+	<select id="read" resultType="org.victor.domain.BoardVO" >
 		select * from tbl_board where bno=#{bno}
 	</select>
 	
@@ -45,7 +45,7 @@
 	
 	
 	<delete id="delete">
-		delete tbl_board where bno = #{bno};
+		delete tbl_board where bno = #{bno}
 	</delete>	 
 </mapper>
 

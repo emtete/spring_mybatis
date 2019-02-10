@@ -29,4 +29,5 @@
 		
 	<context:component-scan base-package="org.victor.sample"></context:component-scan>
 	<mybatis-spring:scan base-package="org.victor.sample"/>
+	<mybatis-spring:scan base-package="org.victor.mapper"/>
 </beans>
