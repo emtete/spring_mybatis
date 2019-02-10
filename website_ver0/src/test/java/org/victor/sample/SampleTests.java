@@ -26,6 +26,9 @@ public class SampleTests {
 	@Setter( onMethod_ = @Autowired )
 	private DiParent parent;
 	
+	@Setter( onMethod_ = @Autowired )
+	private DataSource dataSource;
+	
 	
 //	@Test
 	public void diTest() {
@@ -34,15 +37,15 @@ public class SampleTests {
 		log.info(parent);
 	}
 	
-	static {
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	static {
+//		try {
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
-	@Test
+//	@Test
 	public void testConnection() {
 		
 		try(Connection con = 
@@ -56,6 +59,21 @@ public class SampleTests {
 			fail(e.getMessage());
 		}
 	}
+	
+	
+	@Test
+	public void jdbcTests() {
+		
+		try( Connection con = dataSource.getConnection() ){
+			log.info(con);
+		} catch(Exception e) {
+			fail(e.getMessage());
+		}
+		
+	}
+	
+	
+	
 }
 
 
