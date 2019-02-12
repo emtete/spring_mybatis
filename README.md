@@ -1,6 +1,7 @@
 # spring_mybatis
 
 프로젝트를 여러개 만들어서 반복적으로 코딩중입니다.
+이 내용은 책 : 코드로 배우는 스프링 웹 프로젝트를 참고했습니다.
 
 ex는 예제를 뜻합니다.
 bex는 connectionPool을 apache common을 사용, 최대한 lombok을 사용하지 않고 코딩했습니다.<br/>
