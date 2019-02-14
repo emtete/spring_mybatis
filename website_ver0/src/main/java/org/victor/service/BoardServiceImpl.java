@@ -17,7 +17,7 @@ public class BoardServiceImpl implements BoardService {
 
 	private BoardMapper mapper;
 	
-	public GenLog log = new GenLog();
+	public GenLog log;
 	
 	
 	@Override

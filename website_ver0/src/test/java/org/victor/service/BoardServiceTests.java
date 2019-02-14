@@ -22,7 +22,8 @@ public class BoardServiceTests {
 	@Setter( onMethod_ = @Autowired )
 	private BoardService service;
 	
-	private GenBoardVO genBoard = new GenBoardVO();
+	@Setter( onMethod_ = @Autowired )
+	private GenBoardVO genBoard;
 	
 //	@Test
 	public void getListTest() {
@@ -55,7 +56,7 @@ public class BoardServiceTests {
 //	@Test
 	public void removeTest() {
 		
-		service.remove(55L);
+		service.remove(54L);
 	}
 	
 	@Test

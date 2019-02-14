@@ -48,7 +48,7 @@ public class MapperTest {
 	}
 	
 	
-//	@Test
+	@Test
 	public void insertTest() {
 		
 		BoardVO board = genBoard(3);
@@ -93,7 +93,7 @@ public class MapperTest {
 	}
 	
 	
-	@Test
+//	@Test
 	public void totalTest() {
 		
 		getListTest();

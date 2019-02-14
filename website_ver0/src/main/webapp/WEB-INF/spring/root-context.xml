@@ -27,9 +27,10 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 		
-	<context:component-scan base-package="org.victor.sample"></context:component-scan>
-	<context:component-scan base-package="org.victor.service"></context:component-scan>
-	<context:component-scan base-package="org.victor.util"></context:component-scan>
+	<context:component-scan base-package="org.victor.sample"/>
+	<context:component-scan base-package="org.victor.service"/>
+	<context:component-scan base-package="org.victor.util"/>
+	<context:component-scan base-package="org.victor.controller" />
 	<mybatis-spring:scan base-package="org.victor.sample"/>
 	<mybatis-spring:scan base-package="org.victor.mapper"/>
 </beans>

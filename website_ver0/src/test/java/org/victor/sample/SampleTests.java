@@ -102,7 +102,7 @@ public class SampleTests {
 		
 	}
 	
-	@Test
+//	@Test
 	public void mapperXmlTest() {
 		
 		log.info( sampleMapper.getTime() );
