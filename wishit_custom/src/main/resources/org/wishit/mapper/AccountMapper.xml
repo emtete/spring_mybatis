@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wishit.mapper.AccountMapper">
+
+	<resultMap id="accountResultMap" type="org.wishit.domain.AccountVO">
+		<id 	property="busiNum" column="BUSI_NUM" />
+		<result property="factory" column="FACTORY" />
+		<result property="tradeBank" column="TRADE_BANK" />
+		<result property="accountNum" column="ACCOUNT_NUM" />
+	</resultMap>
+
+	<select id="getList" resultMap = "accountResultMap">
+		select * from account
+	</select>
+	
+	<select id="get" resultMap = "accountResultMap">
+		select * from account where BUSI_NUM = #{busiNum} 
+	</select>
+	
+	<insert id="insert">
+		INSERT	INTO	ACCOUNT
+	(		
+		BUSI_NUM,		
+		FACTORY,		
+		TRADE_BANK,		
+		ACCOUNT_NUM		
+	)VALUES(		
+		#{busiNum},		
+		#{factory},		
+		#{tradeBank},		
+		#{accountNum}	
+	)
+	</insert>
+	
+	<update id="update">
+	UPDATE	ACCOUNT
+	SET	
+		FACTORY		=#{factory},
+		TRADE_BANK	=#{tradeBank},
+		ACCOUNT_NUM	=#{accountNum}
+		WHERE  	
+		BUSI_NUM	=#{busiNum}
+	</update>
+	
+	<delete id="delete">
+	DELETE	
+		FROM ACCOUNT	
+		WHERE BUSI_NUM= #{busiNum}
+	</delete>
+</mapper>

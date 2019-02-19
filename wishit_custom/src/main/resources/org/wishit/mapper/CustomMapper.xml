@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wishit.mapper.CustomMapper">
+
+
+	<resultMap id="customResultMap" type="org.wishit.domain.CustomVO">
+	  	<id property="busiNum" column="BUSI_NUM" />
+		<result property="custom" column="CUSTOM" />
+		<result property="shortt" column="SHORTT" />
+		<result property="ceo" column="CEO" />
+		<result property="chargePerson" column="CHARGE_PERSON" />
+		<result property="busiCondition" column="BUSI_CONDITION" />
+		<result property="item" column="ITEM" />
+		<result property="postNum" column="POST_NUM" />
+		<result property="addr1" column="ADDR1" />
+		<result property="addr2" column="ADDR2" />
+		<result property="tel" column="TEL" />
+		<result property="fax" column="FAX" />
+		<result property="homepage" column="HOMEPAGE" />
+		<result property="coYn" column="CO_YN" />
+		<result property="foreignYn" column="FOREIGN_YN" />
+		<result property="taxYn" column="TAX_YN" />
+		<result property="countryEng" column="COUNTRY_ENG" />
+		<result property="countryKor" column="COUNTRY_KOR" />
+		<result property="specialRelation" column="SPECIAL_RELATION" />
+		<result property="tradeStop" column="TRADE_STOP" />
+		<result property="contractPeriodS" column="CONTRACT_PERIOD_S" />
+		<result property="contractPeriodE" column="CONTRACT_PERIOD_E" />
+		<result property="regiInfoMan" column="REGI_INFO_MAN" />
+		<result property="regiInfoDate" column="REGI_INFO_DATE" />
+		<result property="modiInfoMan" column="MODI_INFO_MAN" />
+		<result property="modiInfoDate" column="MODI_INFO_DATE" />
+	</resultMap>
+
+		
+	<select id="getTime2" resultType="String">
+		select sysdate from dual
+	</select>
+	
+	<select id="getList" resultMap="customResultMap">
+		select * from custom
+	</select>
+	
+
+	<select id="get" resultMap="customResultMap">
+		select * from custom where busi_num = #{busiNum}
+	</select>
+	
+	<insert id="insert" parameterType="org.wishit.domain.CustomVO">
+	INSERT	INTO	CUSTOM
+	(		
+		BUSI_NUM,	
+		CUSTOM,		
+		SHORTT,		
+		CEO,		
+		CHARGE_PERSON,		
+		BUSI_CONDITION,		
+		ITEM,		
+		POST_NUM,		
+		ADDR1,		
+		ADDR2,		
+		TEL,		
+		FAX,		
+		HOMEPAGE,		
+		CO_YN,		
+		FOREIGN_YN,		
+		TAX_YN,		
+		COUNTRY_ENG,		
+		COUNTRY_KOR,		
+		SPECIAL_RELATION,		
+		TRADE_STOP,		
+		CONTRACT_PERIOD_S,		
+		CONTRACT_PERIOD_E,		
+		REGI_INFO_MAN,		
+		REGI_INFO_DATE,		
+		MODI_INFO_MAN,		
+		MODI_INFO_DATE	
+	) VALUES (		
+		#{busiNum},		
+		#{custom},		
+		#{shortt},		
+		#{ceo},		
+		#{chargePerson},		
+		#{busiCondition},		
+		#{item},		
+		#{postNum},		
+		#{addr1},		
+		#{addr2},		
+		#{tel},		
+		#{fax},		
+		#{homepage},		
+		#{coYn},		
+		#{foreignYn},		
+		#{taxYn},		
+		#{countryEng},		
+		#{countryKor},		
+		#{specialRelation},		
+		#{tradeStop},		
+		SYSDATE,		
+		SYSDATE,		
+		#{regiInfoMan},		
+		SYSDATE,		
+		#{modiInfoMan},		
+		SYSDATE		
+	)
+	</insert>
+	
+	<update id="update">
+	UPDATE	CUSTOM		
+	SET			
+		CUSTOM					=#{custom},
+		SHORTT					=#{shortt},
+		CEO						=#{ceo},
+		CHARGE_PERSON			=#{chargePerson},
+		BUSI_CONDITION			=#{busiCondition},
+		ITEM					=#{item},
+		POST_NUM				=#{postNum},
+		ADDR1					=#{addr1},
+		ADDR2					=#{addr2},
+		TEL						=#{tel},
+		FAX						=#{fax},
+		HOMEPAGE				=#{homepage},
+		CO_YN					=#{coYn},
+		FOREIGN_YN				=#{foreignYn},
+		TAX_YN					=#{taxYn},
+		COUNTRY_ENG				=#{countryEng},
+		COUNTRY_KOR				=#{countryKor},
+		SPECIAL_RELATION		=#{specialRelation},
+		TRADE_STOP				=#{tradeStop},
+		CONTRACT_PERIOD_S		=SYSDATE,
+		CONTRACT_PERIOD_E		=SYSDATE,
+		MODI_INFO_MAN			=#{modiInfoMan},
+		MODI_INFO_DATE			=SYSDATE
+	WHERE			
+		BUSI_NUM				=#{busiNum}
+	</update>
+	
+	<delete id="delete">
+	DELETE	FROM 
+		CUSTOM	
+	WHERE 
+		BUSI_NUM = #{busiNum}
+	</delete>
+	
+	
+</mapper>
