@@ -18,11 +18,46 @@ public class CustomMapperTest {
 	@Setter( onMethod_ = @Autowired)
 	private CustomMapper customMapper;
 	
-//	@Test
+	
+	public CustomVO genCustomVO() {
+			
+			CustomVO custom = new CustomVO();
+			
+			custom.setBusiNum("011-11-11111");
+			custom.setCustom("롯데마트");
+			custom.setShortt("마트");
+			custom.setCeo("ceo");
+			custom.setChargePerson("홍길동");
+			custom.setBusiCondition("업태");
+			custom.setItem("종목");
+			custom.setPostNum("1111");
+			custom.setAddr1("11");
+			custom.setAddr2("22");
+			custom.setTel("12312");
+			custom.setFax("12312");
+			custom.setHomepage("홈페이지");
+			custom.setCoYn("Y");
+			custom.setForeignYn("N");
+			custom.setTaxYn("Y");
+			custom.setCountryEng("KOR");
+			custom.setCountryKor("대한민국");
+			custom.setSpecialRelation("Y");
+			custom.setTradeStop("N");
+			custom.setRegiInfoMan("홍길동");
+			custom.setModiInfoMan("수정인");
+			
+			return custom;
+		}
+
+
+	@Test
 	public void getListTest() {
+		
+		CustomVO customVO = genCustomVO();
+		
 		System.out.println("\n\n\n");
 		System.out.println("getListTest : ");
-		customMapper.getList().forEach( custom -> log.info(custom) );
+		customMapper.getList(customVO).forEach( custom -> log.info(custom) );
 	}
 	
 //	@Test
@@ -33,35 +68,7 @@ public class CustomMapperTest {
 		
 	}
 	
-	public CustomVO genCustomVO() {
-		
-		CustomVO custom = new CustomVO();
-		
-		custom.setBusiNum("511-11-11111");
-		custom.setCustom("수C마트");
-		custom.setShortt("마트");
-		custom.setCeo("ceo");
-		custom.setChargePerson("홍길동");
-		custom.setBusiCondition("업태");
-		custom.setItem("종목");
-		custom.setPostNum("1111");
-		custom.setAddr1("11");
-		custom.setAddr2("22");
-		custom.setTel("12312");
-		custom.setFax("12312");
-		custom.setHomepage("홈페이지");
-		custom.setCoYn("Y");
-		custom.setForeignYn("N");
-		custom.setTaxYn("Y");
-		custom.setCountryEng("KOR");
-		custom.setCountryKor("대한민국");
-		custom.setSpecialRelation("Y");
-		custom.setTradeStop("N");
-		custom.setRegiInfoMan("홍길동");
-		custom.setModiInfoMan("수정인");
-		
-		return custom;
-	}
+	
 	
 //	@Test
 	public void insertTest() {

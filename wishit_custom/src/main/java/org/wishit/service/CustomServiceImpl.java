@@ -1,10 +1,12 @@
 package org.wishit.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.wishit.dao.CustomDao;
+import org.wishit.domain.CustomVO;
 
 import lombok.Setter;
 
@@ -15,9 +17,9 @@ public class CustomServiceImpl implements CustomService {
 	private CustomDao dao;
 	
 	@Override
-	public Map<String, Object> getList() {
+	public List<CustomVO> getList(CustomVO custom) {
 
-		return dao.getList();
+		return dao.getList(custom);
 	}
 
 	@Override

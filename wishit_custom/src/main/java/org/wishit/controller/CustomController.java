@@ -1,9 +1,11 @@
 package org.wishit.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.wishit.domain.AccountVO;
@@ -20,8 +23,8 @@ import org.wishit.service.CustomService;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
-@Controller
-@RequestMapping("/wishit/*")
+@RestController
+@RequestMapping("/wishit")
 @Log4j
 public class CustomController {
 
@@ -29,16 +32,25 @@ public class CustomController {
 	private CustomService service;
 	
 	
-	@GetMapping("/list")
-	public void getList(Model model) {
+//	@GetMapping("/list")
+	@GetMapping( value = "/list",
+			produces = 	MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<CustomVO> getList(CustomVO custom, Model model) {
 
-		Map<String, Object> map = service.getList();
+		List<CustomVO> customList = service.getList(custom);
 		
-		model.addAttribute("custom", map.get("custom"));
-		model.addAttribute("account", map.get("account"));
+		System.out.println( "\n\n\n customVO : " + custom.toString() );
+		
+//		model.addAttribute("custom", map.get("custom"));
+//		model.addAttribute("account", map.get("account"));
+//		
+//		System.out.println("\n\n\n"+map.get("custom"));
+//		System.out.println("\n\n\n"+map.get("account"));
+		
+		return customList;
 	}
 	
-//	@GetMapping("/get")
+	@GetMapping("/get")
 	public void get(@RequestParam("busiNum") String busiNum, Model model) {
 		
 		Map<String, Object> map = service.get(busiNum);

@@ -1,0 +1,132 @@
+UPDATE	CUSTOM
+SET	
+	CUSTOM 				= '수정마트',	
+	SHORTT 				= '수정마트',	
+	CEO 				= 'NBV',	
+	CHARGE_PERSON 		= 'DFD',	
+	BUSI_CONDITION 		= '업태',	
+	ITEM 				= '종목',	
+	POST_NUM 			= '234343',	
+	ADDR1 				= '주소1',	
+	ADDR2 				= '주소2',	
+	TEL 				= '234234',	
+	FAX 				= '34324',	
+	HOMEPAGE 			= '홈페이지',	
+	CO_YN 				= 'Y',	
+	FOREIGN_YN 			= 'N',	
+	TAX_YN 				= 'Y',	
+	COUNTRY_ENG 		= 'KOR',	
+	COUNTRY_KOR 		= '대한민국',	
+	SPECIAL_RELATION	= 'Y',	
+	TRADE_STOP 			= 'N',	
+	CONTRACT_PERIOD_S 	= SYSDATE,	
+	CONTRACT_PERIOD_E 	= SYSDATE,	
+	MODI_INFO_MAN 		= '수정인',	
+	MODI_INFO_DATE 		= SYSDATE	
+WHERE	
+	BUSI_NUM 			= '211-11-11111';
+
+
+
+
+
+
+UPDATE	CUSTOM
+SET	
+	CUSTOM = ,	
+	SHORT = ,	
+	CEO = ,	
+	CHARGE_PERSON = 'DFD',	
+	BUSI_CONDITION = '업태',	
+	ITEM = '종목',	
+	POST_NUM = '234343',	
+	ADDR1 = '주소1',	
+	ADDR2 = '주소2',	
+	TEL = '234234',	
+	FAX = '34324',	
+	HOMEPAGE = '홈페이지',	
+	CO_YN = 'Y',	
+	FOREIGN_YN = 'N',	
+	TAX_YN = 'Y',	
+	COUNTRY_ENG = 'KOR',	
+	COUNTRY_KOR = '대한민국',	
+	SPECIAL_RELATION = 'Y',	
+	TRADE_STOP = 'N',	
+	CONTRACT_PERIOD_S = SYSDATE,	
+	CONTRACT_PERIOD_E = SYSDATE,	
+	MODI_INFO_MAN = '수정인',	
+	MODI_INFO_DATE = SYSDATE	
+WHERE	
+	BUSI_NUM = '211-11-11111';	
+
+
+
+UPDATE	CUSTOM	
+SET		
+	CUSTOM 				= #{custom},
+	SHORTT 				= #{shortt},
+	CEO 				= #{ceo},
+	CHARGE_PERSON 		= #{chargePerson},
+	BUSI_CONDITION 		= #{busiCondition},
+	ITEM 				= #{item},
+	POST_NUM 			= #{postNum},
+	ADDR1 				= #{addr1},
+	ADDR2 				= #{addr2},
+	TEL 				= #{tel},
+	FAX 				= #{fax},
+	HOMEPAGE 			= #{homepage},
+	CO_YN 				= #{coYn},
+	FOREIGN_YN 			= #{foreignYn},
+	TAX_YN 				= #{taxYn},
+	COUNTRY_ENG 		= #{countryEng},
+	COUNTRY_KOR 		= #{countryKor},
+	SPECIAL_RELATION 	= #{specialRelation},
+	TRADE_STOP 			= #{tradeStop},
+	CONTRACT_PERIOD_S 	= #{contractPeriodS},
+	CONTRACT_PERIOD_E 	= #{contractPeriodE},
+	MODI_INFO_MAN		= #{modiInfoMan},
+	MODI_INFO_DATE 		= #{modiInfoDate}
+WHERE
+	BUSI_NUM = #{busiNum}
+
+
+UPDATE	CUSTOM		
+SET			
+	CUSTOM					=#{custom},
+	SHORTT					=#{shortt},
+	CEO						=#{ceo},
+	CHARGE_PERSON			=#{chargePerson},
+	BUSI_CONDITION			=#{busiCondition},
+	ITEM					=#{item},
+	POST_NUM				=#{postNum},
+	ADDR1					=#{addr1},
+	ADDR2					=#{addr2},
+	TEL						=#{tel},
+	FAX						=#{fax},
+	HOMEPAGE				=#{homepage},
+	CO_YN					=#{coYn},
+	FOREIGN_YN				=#{foreignYn},
+	TAX_YN					=#{taxYn},
+	COUNTRY_ENG				=#{countryEng},
+	COUNTRY_KOR				=#{countryKor},
+	SPECIAL_RELATION		=#{specialRelation},
+	TRADE_STOP				=#{tradeStop},
+	CONTRACT_PERIOD_S		=#{contractPeriodS},
+	CONTRACT_PERIOD_E		=#{contractPeriodE},
+	MODI_INFO_MAN			=#{modiInfoMan},
+	MODI_INFO_DATE			=#{modiInfoDate}
+WHERE			
+	BUSI_NUM				=#{busiNum}
+
+
+
+
+
+
+UPDATE	ACCOUNT
+SET	
+FACTORY		=#{factory}
+TRADE_BANK	=#{tradeBank}
+ACCOUNT_NUM	=#{accountNum}
+WHERE  	
+BUSI_NUM	=#{busiNum}

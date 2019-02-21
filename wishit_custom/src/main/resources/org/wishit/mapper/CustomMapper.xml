@@ -39,8 +39,9 @@
 		select sysdate from dual
 	</select>
 	
-	<select id="getList" resultMap="customResultMap">
+	<select id="getList" parameterType="org.wishit.domain.CustomVO" resultMap="customResultMap">
 		select * from custom
+		where busi_num= #{busiNum} or custom= #{custom}
 	</select>
 	
 

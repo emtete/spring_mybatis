@@ -84,7 +84,7 @@ public class SampleTests {
 		
 	}
 	
-//	@Test
+	@Test
 	public void sqlSessionTest() {
 		
 		try(	SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -117,8 +117,8 @@ public class SampleTests {
 //	@Test
 	public void customMapperXmlTest() {
 		
-		log.info( customMapper.getTime2() );
-		log.info( customMapper.getClass().getName() );
+//		log.info( customMapper.getTime2() );
+//		log.info( customMapper.getClass().getName() );
 	}
 	
 }

@@ -1,6 +1,7 @@
 package org.wishit.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ public class CustomDaoImpl implements CustomDao {
 	
 	
 	@Override
-	public Map<String, Object> getList() {
+	public List<CustomVO> getList(CustomVO custom) {
 		
-		Map map = new HashMap<String, Object>();
-		map.put("custom", customMapper.getList());
-		map.put("account", accountMapper.getList());
+//		Map map = new HashMap<String, Object>();
+//		map.put("custom", customMapper.getList());
+//		map.put("account", accountMapper.getList());
 		
 		
-		return map;
+		return customMapper.getList(custom);
 	}
 
 	

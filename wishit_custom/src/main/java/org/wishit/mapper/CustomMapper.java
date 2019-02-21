@@ -7,8 +7,7 @@ import org.wishit.domain.CustomVO;
 public interface CustomMapper {
 
 	public String getTime2();
-	
-	public List<CustomVO> getList();
+	public List<CustomVO> getList(CustomVO custom);
 	public List<CustomVO> get(String busiNum);
 	public void insert(CustomVO custom);
 //	public CustomVO insertSelectKey();
