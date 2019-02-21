@@ -5,10 +5,14 @@
 <head>
 	<title>wishit_custom</title>
 	
+	
 	<link rel="stylesheet" type="text/css" href="resources/css/wishit_custom.css">
-	<script src="resources/js/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="resources/js/jquery.js"></script> -->
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 	<script src="resources/js/wishit_custom.js" type="text/javascript"></script>
 	<script src="resources/js/ajax.js" type="text/javascript"></script>
+	<script src="resources/js/generateHtml.js" type="text/javascript"></script>
 	
 </head>
 <body>
@@ -43,7 +47,7 @@
 						<td>
 							<input type="text" class="search_textbox" id="search_custom">	
 						</td>
-						<td><input type="button" value="조회"></td>
+						<td><input type="button" value="조회" id = "searchButton"></td>
 					</tr>
 				</table>
 			</form>
@@ -61,30 +65,6 @@
 					</tr>
 				</thead>
 
-				<tr>
-					<td>
-						<!-- <label id="list_busiNum">11</label> -->
-						1
-					</td>
-					<td>
-						<!-- <label id="list_custom">custom</label> -->
-						1
-					</td>
-				</tr>
-
-				<tr>
-					<td>1</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>1</td>
-				</tr>
-			
 			</table>
 
 		</div>	

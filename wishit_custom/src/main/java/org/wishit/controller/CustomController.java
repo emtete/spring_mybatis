@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,13 +34,18 @@ public class CustomController {
 	
 	
 //	@GetMapping("/list")
-	@GetMapping( value = "/list",
+	@GetMapping( value = "/list/{busiNum}/{custom}",
 			produces = 	MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public List<CustomVO> getList(CustomVO custom, Model model) {
+	public List<CustomVO> getList( @PathVariable("busiNum") String busiNum,
+									@PathVariable("custom") String custom) {
 
-		List<CustomVO> customList = service.getList(custom);
+		CustomVO customVO = new CustomVO();
+		customVO.setBusiNum(busiNum);
+		customVO.setCustom(custom);
 		
-		System.out.println( "\n\n\n customVO : " + custom.toString() );
+		List<CustomVO> customList = service.getList(customVO);
+		
+		System.out.println( "\n\n\n customVO : " + customVO.toString() );
 		
 //		model.addAttribute("custom", map.get("custom"));
 //		model.addAttribute("account", map.get("account"));
