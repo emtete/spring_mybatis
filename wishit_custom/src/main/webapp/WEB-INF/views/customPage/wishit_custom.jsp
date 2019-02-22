@@ -81,7 +81,7 @@
 					</td>
 					<td>약	칭</td>
 					<td>
-						<input type="text" id="short">
+						<input type="text" id="shortt">
 					</td>
 				</tr>
 				<tr>

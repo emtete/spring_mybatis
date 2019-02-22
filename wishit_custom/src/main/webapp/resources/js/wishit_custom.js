@@ -9,10 +9,8 @@
 
 $(document).ready(function(){
 
-
 	$('#save').click(function(){
 
-		
 		if( !run_val() ){
 			alert('validation check fail !!');
 			return;
@@ -24,26 +22,8 @@ $(document).ready(function(){
 	
 	$('#searchButton').on('click', function(){ 
 		
-		var busiNum = $('#search_busiNum').val();
-		var custom = $('#search_custom').val();
-		
-		alert(busiNum + '  ' + custom);
-		
-		customService.getList( { "busiNum": busiNum, 
-								 "custom" : custom },
-								
-					function(data){
-						sidebarListAppend(data);
-					},
-					function(error){
-						console.log("fail");
-					}
-				);
+		runGetList();
 	});
-	
-	
-
-	
 });
 
 
