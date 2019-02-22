@@ -33,7 +33,6 @@ public class CustomController {
 	private CustomService service;
 	
 	
-//	@GetMapping("/list")
 	@GetMapping( value = "/list/{busiNum}/{custom}",
 			produces = 	MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<CustomVO> getList( @PathVariable("busiNum") String busiNum,
@@ -47,22 +46,20 @@ public class CustomController {
 		
 		System.out.println( "\n\n\n customVO : " + customVO.toString() );
 		
-//		model.addAttribute("custom", map.get("custom"));
-//		model.addAttribute("account", map.get("account"));
-//		
-//		System.out.println("\n\n\n"+map.get("custom"));
-//		System.out.println("\n\n\n"+map.get("account"));
-		
 		return customList;
 	}
 	
-	@GetMapping("/get")
-	public void get(@RequestParam("busiNum") String busiNum, Model model) {
+	
+	@GetMapping( value = "/detail/{busiNum}",
+			produces = 	MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public Map<String, Object> get(@PathVariable("busiNum") String busiNum ) {
 		
 		Map<String, Object> map = service.get(busiNum);
 		
-		model.addAttribute("custom", map.get("custom"));
-		model.addAttribute("account", map.get("account"));
+		System.out.println( map.get("custom") );
+		System.out.println( map.get("account") );
+		
+		return map;
 	}
 	
 	@PostMapping("/insert")
