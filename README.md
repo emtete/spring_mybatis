@@ -32,3 +32,4 @@ https://www.evernote.com/shard/s573/nl/98372557/066d1123-b0ed-4f54-b48e-00f8a3d3
 https://www.evernote.com/shard/s573/nl/98372557/2fe05749-24ad-4d7c-8b31-1f487075db93/
 https://www.evernote.com/shard/s573/nl/98372557/d0f40fcf-f524-4a3b-a4cc-511ecbba47a6/
 https://www.evernote.com/shard/s573/nl/98372557/155f1489-42c3-4b40-98b3-4eca54924b8d/
+https://www.evernote.com/l/Aj0VXxSJQsNLQJizTspUkkuNoW7fx0FL7hA
