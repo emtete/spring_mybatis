@@ -1,5 +1,8 @@
+<%@page import="org.wishit.domain.CustomVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +13,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- <script src="resources/js/jquery.js"></script> -->
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-	<script src="resources/js/wishit_custom.js" type="text/javascript"></script>
-	<script src="resources/js/ajax.js" type="text/javascript"></script>
-	<script src="resources/js/generateHtml.js" type="text/javascript"></script>
+	<script src="resources/js/controller/customController.js" type="text/javascript"></script>
+	<script src="resources/js/model/customModel.js" type="text/javascript"></script>
+	<script src="resources/js/view/customView.js" type="text/javascript"></script>
 	
 </head>
 <body>
@@ -59,10 +62,10 @@
 			<table>
 				
 				<thead>
-					<tr>
+					
 						<td>사업자 번호</td>
 						<td>거래처명</td>
-					</tr>
+					
 				</thead>
 
 			</table>

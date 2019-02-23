@@ -2,6 +2,9 @@ package org.wishit.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
+
 import lombok.Data;
 
 @Data
@@ -27,10 +30,18 @@ public class CustomVO {
 	private String countryKor;
 	private String specialRelation;
 	private String tradeStop;
-	private Date contractPeriodS;
-	private Date contractPeriodE;
-	private String regiInfoMan;
-	private Date regiInfoDate;
 	private String modiInfoMan;
+	private String regiInfoMan;
+	
+	@JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul" )
+	private Date contractPeriodS;
+	
+	@JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul" )
+	private Date contractPeriodE;
+	
+	@JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul" )
+	private Date regiInfoDate;
+	
+	@JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul" )
 	private Date modiInfoDate;
 }

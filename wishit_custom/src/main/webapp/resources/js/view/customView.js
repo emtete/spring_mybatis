@@ -1,6 +1,7 @@
 
 function sidebarListAppend(data){
 	
+	$('#sidebar_list table tr').not(":first").remove();
 	
 	$.each( data, function( index, custom ){
 		$('#sidebar_list table')

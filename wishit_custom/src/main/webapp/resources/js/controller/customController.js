@@ -15,15 +15,22 @@ $(document).ready(function(){
 			alert('validation check fail !!');
 			return;
 		} 
-
 		alert('validation check success	!!');
-
 	});
+	
+	
 	
 	$('#searchButton').on('click', function(){ 
 		
 		runGetList();
 	});
+	
+	JSON.stringify
+	
+	document.cookie = "";
+	
+	
+	
 });
 
 
