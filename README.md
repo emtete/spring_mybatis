@@ -18,8 +18,8 @@ jex는 servlet-context.xml, root-context.xml, web.xml을 자바 파일을 통해
 
 Issue
 
-[1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )](https://www.evernote.com/l/Aj3lECLJaJJFZq_gdV4s6SWq-2zyUEvLBQ4)
-[2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )](https://www.evernote.com/l/Aj10HEQkbCxKXLucK4duu77kpopvOynpud8)
-[3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.](https://www.evernote.com/l/Aj0v4FdJJK1NfIsxH0hwdduTUoD1eR5a-ag)
-[4. Transfer dateType Between ajax and spring by json.](https://www.evernote.com/l/Aj3Q9A_P9SRKO6TMUR7Lukemwreaqj-wpGo)
-[5. url : Rest/Uri/value1/value2, value1 null일 경우 Error](https://www.evernote.com/l/Aj0VXxSJQsNLQJizTspUkkuNoW7fx0FL7hA)
+[1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )](https://www.evernote.com/l/Aj3lECLJaJJFZq_gdV4s6SWq-2zyUEvLBQ4)<br/>
+[2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )](https://www.evernote.com/l/Aj10HEQkbCxKXLucK4duu77kpopvOynpud8)<br/>
+[3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.](https://www.evernote.com/l/Aj0v4FdJJK1NfIsxH0hwdduTUoD1eR5a-ag)<br/>
+[4. Transfer dateType Between ajax and spring by json.](https://www.evernote.com/l/Aj3Q9A_P9SRKO6TMUR7Lukemwreaqj-wpGo)<br/>
+[5. url : Rest/Uri/value1/value2, value1 null일 경우 Error](https://www.evernote.com/l/Aj0VXxSJQsNLQJizTspUkkuNoW7fx0FL7hA)<br/>
