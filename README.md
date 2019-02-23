@@ -40,3 +40,10 @@ https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce9
 https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/
 
 https://www.evernote.com/pub/victor_77177/wishit_custom
+
+
+https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce925aa/
+https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/
+https://www.evernote.com/shard/s573/nl/98372557/2fe05749-24ad-4d7c-8b31-1f487075db93/
+https://www.evernote.com/shard/s573/nl/98372557/d0f40fcf-f524-4a3b-a4cc-511ecbba47a6/
+https://www.evernote.com/shard/s573/nl/98372557/155f1489-42c3-4b40-98b3-4eca54924b8d/
