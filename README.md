@@ -38,3 +38,5 @@ Issue
 
 https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce925aa/
 https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/
+
+https://www.evernote.com/pub/victor_77177/wishit_custom
