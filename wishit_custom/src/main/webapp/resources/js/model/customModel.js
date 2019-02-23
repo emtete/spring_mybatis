@@ -19,7 +19,7 @@ var customService = (function(){
 						error();
 					}
 				});
-	} 
+	}
 	
 	
 	function getDetail( param, callback, error ){
@@ -36,14 +36,12 @@ var customService = (function(){
 							error();
 						}
 				});
-		
 	}
 
 	
-	return { 
-		getList : getList,
-		getDetail : getDetail
-			
+	return {
+				getList : getList,
+				getDetail : getDetail
 			};
 })();
 
@@ -64,6 +62,7 @@ function runGetList(){
 				}
 			);
 }
+
 
 
 function runGetDetail(){
