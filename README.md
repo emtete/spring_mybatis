@@ -18,32 +18,8 @@ jex는 servlet-context.xml, root-context.xml, web.xml을 자바 파일을 통해
 
 Issue
 
-[1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )]
-[2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )]
-[3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.]
-[4. Transfer dateType Between ajax and spring by json.]
-[5. url : Rest/Uri/value1/value2, value1 null일 경우 Error]
-
-<Link>
-[aa](http://www.naver.com)
-
-[naver](http://www.naver.com)
-
-[1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )](https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce925aa/) <br/>
-[2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )](https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/)<br/>
-[3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.](https://www.evernote.com/shard/s573/nl/98372557/2fe05749-24ad-4d7c-8b31-1f487075db93/)<br/>
-[4. Transfer dateType Between ajax and spring by json.](https://www.evernote.com/shard/s573/nl/98372557/d0f40fcf-f524-4a3b-a4cc-511ecbba47a6/)<br/>
-[5. url : Rest/Uri/value1/value2, value1 null일 경우 Error](https://www.evernote.com/shard/s573/nl/98372557/155f1489-42c3-4b40-98b3-4eca54924b8d/)<br/>
-
-
-https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce925aa/
-https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/
-
-https://www.evernote.com/pub/victor_77177/wishit_custom
-
-
-https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce925aa/
-https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/
-https://www.evernote.com/shard/s573/nl/98372557/2fe05749-24ad-4d7c-8b31-1f487075db93/
-https://www.evernote.com/shard/s573/nl/98372557/d0f40fcf-f524-4a3b-a4cc-511ecbba47a6/
-https://www.evernote.com/shard/s573/nl/98372557/155f1489-42c3-4b40-98b3-4eca54924b8d/
+[1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )](https://www.evernote.com/l/Aj3lECLJaJJFZq_gdV4s6SWq-2zyUEvLBQ4)
+[2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )](https://www.evernote.com/l/Aj10HEQkbCxKXLucK4duu77kpopvOynpud8)
+[3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.](https://www.evernote.com/l/Aj0v4FdJJK1NfIsxH0hwdduTUoD1eR5a-ag)
+[4. Transfer dateType Between ajax and spring by json.](https://www.evernote.com/l/Aj3Q9A_P9SRKO6TMUR7Lukemwreaqj-wpGo)
+[5. url : Rest/Uri/value1/value2, value1 null일 경우 Error](https://www.evernote.com/l/Aj0VXxSJQsNLQJizTspUkkuNoW7fx0FL7hA)
