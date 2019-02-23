@@ -18,6 +18,8 @@ jex는 servlet-context.xml, root-context.xml, web.xml을 자바 파일을 통해
 
 Issue
 
+https://www.evernote.com/l/Aj0GbREjsO1PVLSOAPij04osP5VnW6JkwVc
+
 1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )
 2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )
 3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음. ( 2019.02.22 )
