@@ -34,3 +34,7 @@ Issue
 [3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.](https://www.evernote.com/shard/s573/nl/98372557/2fe05749-24ad-4d7c-8b31-1f487075db93/)<br/>
 [4. Transfer dateType Between ajax and spring by json.](https://www.evernote.com/shard/s573/nl/98372557/d0f40fcf-f524-4a3b-a4cc-511ecbba47a6/)<br/>
 [5. url : Rest/Uri/value1/value2, value1 null일 경우 Error](https://www.evernote.com/shard/s573/nl/98372557/155f1489-42c3-4b40-98b3-4eca54924b8d/)<br/>
+
+
+https://www.evernote.com/shard/s573/nl/98372557/e51022c9-6892-4566-afe0-755e2ce925aa/
+https://www.evernote.com/shard/s573/nl/98372557/741c4424-6c2c-4a5c-bb9c-2b876ebbbee4/
