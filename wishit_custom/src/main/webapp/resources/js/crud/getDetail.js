@@ -1,6 +1,7 @@
 
 
-var customService = (function(){
+
+var detailService = (function(){
 	
 	function getDetail( param, callback, error ){
 		
@@ -25,11 +26,12 @@ var customService = (function(){
 
 function runGetDetail(busiNum){
 	
-	customService.getDetail( { "busiNum" : busiNum },
+	detailService.getDetail( { "busiNum" : busiNum },
 				function(data){ putDetail(data); },
 				function(error){ console.log('fail'); }
 	);			
 }
+
 
 
 function putDetail(data){
@@ -62,9 +64,8 @@ function putDetail(data){
 	
 	$('#specialRelation').attr( 'checked', ynToBool( data.custom[0].specialRelation ) );
 	$('#tradeStop').val( 'checked', ynToBool( data.custom[0].tradeStop ) );
-	
-	
 }
+
 
 
 function ynToBool(yn){

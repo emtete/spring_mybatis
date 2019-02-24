@@ -6,6 +6,7 @@ $(document).ready(function(){
 });
 
 
+
 function searchEventBinding(){
 	
 	$('#searchButton').on('click', function(){ 
@@ -18,6 +19,7 @@ function searchEventBinding(){
 function hideTableRow(){
 	$('tr[class="list_tr"]').hide();
 }
+
 
 
 var customService = (function(){
