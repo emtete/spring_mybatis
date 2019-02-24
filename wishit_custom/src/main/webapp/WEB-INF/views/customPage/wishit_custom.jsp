@@ -249,6 +249,8 @@
 	<script src="resources/js/crud/getDetail.js" type="text/javascript"></script>
 	<script src="resources/js/crud/getList.js" type="text/javascript"></script>
 	
+	<script src="resources/js/reLoad.js" type="text/javascript"></script>
+	
 
 </body>
 </html>
