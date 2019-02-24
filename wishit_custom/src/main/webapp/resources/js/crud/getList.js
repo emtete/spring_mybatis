@@ -1,9 +1,26 @@
 
 
 $(document).ready(function(){
+	
 	hideTableRow();
 	searchEventBinding();
+	reLoadAction();
+	
 });
+
+
+function reLoadAction(){
+
+	var busiNum = CookieUtil.get('busiNum');
+	var custom = CookieUtil.get('custom');
+
+	if( busiNum != null && busiNum != null ){
+		$('#search_busiNum').val(busiNum);
+		$('#search_custom').val(custom);	
+
+		runGetList(); 
+	}	
+}
 
 
 
@@ -52,17 +69,19 @@ function runGetList(){
 	var busiNum = $('#search_busiNum').val();
 	var custom = $('#search_custom').val();
 	
-	customService.getList( { "busiNum": busiNum, 
-							 "custom" : custom },
+	CookieUtil.set('busiNum', busiNum);
+	CookieUtil.set('custom', custom);
+
+	customService.getList( 
+		{ "busiNum": busiNum, "custom" : custom },
 							
-				function(data){
-					sidebarListAppend(data);
-				},
-				function(error){
-					console.log("fail");
-				}
-			);
+		function(data){ sidebarListAppend(data); },
+
+		function(error){ console.log("fail"); }
+						 );
 }
+
+
 
 
 

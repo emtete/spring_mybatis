@@ -1,12 +1,7 @@
 
 
 $(document).ready(function(){
-	CookieUtil.set('name', 'value');
-	CookieUtil.set('choi', 'jongho');
-	console.log( CookieUtil.get("name") );
-	console.log( CookieUtil.get("choi") );
-	CookieUtil.unset('name');
-	console.log( document.cookie );
+	
 });
 
 
