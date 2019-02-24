@@ -13,19 +13,17 @@ $(document).ready(function(){
 	saveEventBinding();
 	searchEventBinding();
 	
+//	keepData();
+//	console.log(document.cookie);
 	
-	
-	
-//	JSON.stringify
-//	
-//	document.cookie = "";
-	
-	
+
 	
 });
 
-
-
+//새로고침 하면 사라지는 데이터 유지. 
+function keepData(){
+	sidebarListAppend(data);
+}
 
 
 

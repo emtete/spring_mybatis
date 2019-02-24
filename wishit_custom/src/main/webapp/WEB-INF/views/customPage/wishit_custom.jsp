@@ -10,17 +10,8 @@
 	
 	
 	<link rel="stylesheet" type="text/css" href="resources/css/wishit_custom.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- <script src="resources/js/jquery.js"></script> -->
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-	
-	<script src="resources/js/controller/customController.js" type="text/javascript"></script>
-	<script src="resources/js/controller/eventBinding.js" type="text/javascript"></script>
-	
-	<script src="resources/js/model/customModel.js" type="text/javascript"></script>
-	
-	<script src="resources/js/view/customView.js" type="text/javascript"></script>
-	<script src="resources/js/view/validation.js" type="text/javascript"></script>
+
 	
 </head>
 <body>
@@ -63,14 +54,44 @@
 		</div>
 
 		<div id="sidebar_list">
-			
-			<table>
-				<thead>
-						<td>사업자 번호</td>
-						<td>거래처명</td>
-				</thead>
-			</table>
-
+				<table>
+					<thead>
+							<td>사업자 번호</td>
+							<td>거래처명</td>
+					</thead>
+					
+					<tr id="list_tr0" class="list_tr">
+						<td class="list_td1">
+							<a href="#" id="list_link0"></a>
+						</td>
+						<td class="list_td2"></td>
+					</tr>
+					<tr id="list_tr1" class="list_tr">
+						<td class="list_td1">
+							<a href="#" id="list_link1"></a>
+						</td>
+						<td class="list_td2"></td>
+					</tr>
+					<tr id="list_tr2" class="list_tr">
+						<td class="list_td1">
+							<a href="#" id="list_link2"></a>
+						</td>
+						<td class="list_td2"></td>
+					</tr>
+					<tr id="list_tr3" class="list_tr">
+						<td class="list_td1">
+							<a href="#" id="list_link3"></a>
+						</td>
+						<td class="list_td2"></td>
+					</tr>
+					<tr id="list_tr4" class="list_tr">
+						<td class="list_td1">
+							<a href="#" id="list_link4"></a>
+						</td>
+						<td class="list_td2"></td>
+					</tr>					
+					
+				</table>
 		</div>	
 	</div>
 	
@@ -222,6 +243,16 @@
 		</form>
 	</div>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<script src="resources/js/controller/customController.js" type="text/javascript"></script>
+	<script src="resources/js/controller/eventBinding.js" type="text/javascript"></script>
+	
+	<script src="resources/js/model/customModel.js" type="text/javascript"></script>
+	<script src="resources/js/model/customCookie.js" type="text/javascript"></script>
+	
+	<script src="resources/js/view/customView.js" type="text/javascript"></script>
+	<script src="resources/js/view/validation.js" type="text/javascript"></script>
 
 </body>
 </html>
