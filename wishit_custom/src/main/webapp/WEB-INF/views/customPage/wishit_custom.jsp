@@ -245,14 +245,10 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
-	<script src="resources/js/controller/customController.js" type="text/javascript"></script>
-	<script src="resources/js/controller/eventBinding.js" type="text/javascript"></script>
+	<script src="resources/js/crud/register.js" type="text/javascript"></script>
+	<script src="resources/js/crud/getDetail.js" type="text/javascript"></script>
+	<script src="resources/js/crud/getList.js" type="text/javascript"></script>
 	
-	<script src="resources/js/model/customModel.js" type="text/javascript"></script>
-	<script src="resources/js/model/customCookie.js" type="text/javascript"></script>
-	
-	<script src="resources/js/view/customView.js" type="text/javascript"></script>
-	<script src="resources/js/view/validation.js" type="text/javascript"></script>
 
 </body>
 </html>

@@ -1,3 +1,28 @@
+
+
+$(document).ready(function(){
+
+	saveEventBinding();
+});
+
+
+function saveEventBinding(){
+
+	$('#save').click(function(){
+
+		if( !run_val() ){
+			alert('validation check fail !!');
+			return;
+		} 
+		alert('validation check success	!!');
+	});
+
+}
+
+
+
+
+
 //validation check 에 필요한 textFeild의 id 와 제한글자수를 매칭하여 객체로 저장한다.
 function generateObject(){
 	
