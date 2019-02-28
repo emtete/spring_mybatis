@@ -1,4 +1,5 @@
-<%@page import="org.wishit.domain.CustomVO"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -11,7 +12,12 @@
 	
 	<link rel="stylesheet" type="text/css" href="resources/css/wishit_custom.css">
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="shortcut icon" href="favicon.ico">
 
+	<script>
+
+		
+	</script>
 	
 </head>
 <body>
@@ -24,7 +30,8 @@
 	
 		<div id="header_buttons">
 			<input type="button" value="삭제" class="button_top">
-			<input type="button" value="저장/수정" class="button_top"  id="save">
+			<input type="button" value="저장/수정" class="button_top"  id="regiButton">
+			<input type="button" value="초기화" class="button_top"  id="resetButton">
 			<!-- <input type="button" value="초기화" class="button_top"> -->
 		</div>
 	
@@ -97,63 +104,63 @@
 	
 
 	<div id="content_detail">
-		<form id="content_form" name="content_form">
+		<form id="detailForm" name="detailForm">
 			<table>
 				<tr>
 					<td>사업자번호</td>
 					<td> 
-						<input type="text" id="busiNum">
+						<input type="text" id="busiNum" name="busiNum">
 					</td>
 					<td>약	칭</td>
 					<td>
-						<input type="text" id="shortt">
+						<input type="text" id="shortt" name="shortt">
 					</td>
 				</tr>
 				<tr>
 					<td>거 래 처 명</td>
-					<td colspan="3"><input type="text" id="custom"></td>	
+					<td colspan="3"><input type="text" id="custom" name="custom"></td>	
 				</tr>
 				<tr>
 					<td>대  표  자</td>
-					<td><input type="text" id="ceo"></td>
+					<td><input type="text" id="ceo" name="ceo"></td>
 					<td>담  당  자</td>
-					<td><input type="text" id="chargePerson"></td>
+					<td><input type="text" id="chargePerson" name="chargePerson"></td>
 				</tr>
 				<tr>
 					<td>업	태</td>
-					<td><input type="text" id="busiCondition"></td>
+					<td><input type="text" id="busiCondition" name="busiCondition"></td>
 					<td>종	목</td>
-					<td><input type="text" id="item"></td>
+					<td><input type="text" id="item" name="item"></td>
 				</tr>
 				<tr>
 					<td>우 편 번 호</td>
-					<td><input type="text" id="postNum"></td>
+					<td><input type="text" id="postNum" name="postNum"></td>
 					<td>주  소  1</td>
-					<td><input type="text" id="addr1"></td>
+					<td><input type="text" id="addr1" name="addr1"></td>
 				</tr>
 				<tr>
 					<td>주  소  2</td>
 					<td colspan="3">
-						<input type="text" id="addr2">
+						<input type="text" id="addr2" name="addr2">
 					</td>
 				</tr>
 				<tr>
 					<td>전 화 번 호</td>
-					<td><input type="text" id="tel"></td>
+					<td><input type="text" id="tel" name="tel"></td>
 					<td>팩 스 번 호</td>
-					<td><input type="text" id="fax"></td>
+					<td><input type="text" id="fax" name="fax"></td>
 				</tr>
 				<tr>
 					<td>홈 페 이 지</td>
 					<td colspan="3">
-						<input type="text" id="homepage">
+						<input type="text" id="homepage" name="homepage">
 					</td>
 				</tr>
 				<tr>
 					<td>법 인 여 부</td>
 					<td>
 						<div class="table_Yn">
-							<label><input type="radio" name="coYn" value="Y">법인</label>
+							<label><input type="radio" name="coYn" value="Y" checked="checked">법인</label>
 							&nbsp;&nbsp;&nbsp;
 							<label><input type="radio" name="coYn" value="N">개인</label>
 						</div>
@@ -161,7 +168,7 @@
 					<td>해 외 여 부</td>
 					<td>
 						<div class="table_Yn">
-							<label><input type="radio" name="foreignYn" value="Y">국내</label>&nbsp;&nbsp;&nbsp;
+							<label><input type="radio" name="foreignYn" value="Y" checked="checked">국내</label>&nbsp;&nbsp;&nbsp;
 							<label><input type="radio" name="foreignYn" value="N">해외</label>
 						</div>
 					</td>
@@ -169,48 +176,48 @@
 				<tr>
 					<td>과 세 구 분</td>
 					<td>
-						<select id="taxYn">
+						<select id="taxYn" name="taxYn">
 							<option value="Y">과세</option>
 							<option value="N">면제</option>
 						</select>
 					</td>
 					<td>국	   가</td>
 					<td>
-						<input type="text" id="countryEng" readonly>
-						<input type="text" id="countryKor" readonly>
+						<input type="text" id="countryEng" name="countryEng" ><!-- readonly -->
+						<input type="text" id="countryKor" name="countryKor" ><!-- readonly -->
 						<input type="button" value="검색" id="content_select_country">
 					</td>
 				</tr>
 				<tr>
 					<td>특수 관계자</td>
 					<td>
-						<input type="checkbox" value="" id="specialRelation">
+						<input type="checkbox" value="" id="specialRelation" name="specialRelation">
 					</td>
 					<td>거 래 중 지</td>
 					<td>
-						<input type="checkbox" value="" id="tradeStop">
+						<input type="checkbox" value="" id="tradeStop" name="tradeStop">
 					</td>
 				</tr>
 				<tr>
 					<td>계 약 기 간</td>
 					<td colspan="3">
-						<input type="text" id="contractPeriodS" readonly>
+						<input type="text" id="contractPeriodS" name="contractPeriodS" ><!-- readonly -->
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								~
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" id="contractPeriodE" readonly>
+						<input type="text" id="contractPeriodE" name="contractPeriodE" ><!-- readonly -->
 					</td>
 				</tr>
 				<tr>
 					<td>등 록 정 보</td>
 					<td>
-						<input type="text" id="regiInfoMan">
-						<input type="text" id="regiInfoDate" readonly>
+						<input type="text" id="regiInfoMan" name="regiInfoMan">
+						<input type="text" id="regiInfoDate" name="regiInfoDate" ><!-- readonly -->
 					</td>
 					<td>변 경 정 보</td>
 					<td>
-						<input type="text" id="modiInfoMan">
-						<input type="text" id="modiInfoDate" readonly>
+						<input type="text" id="modiInfoMan" name="modiInfoMan">
+						<input type="text" id="modiInfoDate" name="modiInfoDate" ><!-- readonly -->
 					</td>
 				</tr>
 				<tr>
@@ -230,15 +237,11 @@
 					</tr>
 				</thead>
 				<tr>
-					<td><input type="text" id="factory"></td>
-					<td><input type="text" id="tradeBank"></td>
-					<td><input type="text" id="accountNum"></td>
+					<td><input type="text" id="factory" name="factory"></td>
+					<td><input type="text" id="tradeBank" name="tradeBank"></td>
+					<td><input type="text" id="accountNum" name="accountNum"></td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>1</td>
-					<td>1</td>
-				</tr>
+				
 			</table>
 		</form>
 	</div>

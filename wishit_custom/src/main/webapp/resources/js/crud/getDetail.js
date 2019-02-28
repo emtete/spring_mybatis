@@ -27,15 +27,15 @@ var detailService = (function(){
 function runGetDetail(busiNum){
 	
 	detailService.getDetail( { "busiNum" : busiNum },
-				function(data){ putDetail(data); },
+				function(data){ callbackForDetail(data); },
 				function(error){ console.log('fail'); }
 	);			
 }
 
 
 
-function putDetail(data){
-	
+function callbackForDetail(data){
+
 	$('#busiNum').val( data.custom[0].busiNum );
 	$('#custom').val( data.custom[0].custom );
 	$('#shortt').val( data.custom[0].shortt );
@@ -64,6 +64,11 @@ function putDetail(data){
 	
 	$('#specialRelation').attr( 'checked', ynToBool( data.custom[0].specialRelation ) );
 	$('#tradeStop').val( 'checked', ynToBool( data.custom[0].tradeStop ) );
+
+	
+	$('#factory').val( data.account[0].factory );
+	$('#tradeBank').val( data.account[0].tradeBank );
+	$('#accountNum').val( data.account[0].accountNum );
 }
 
 

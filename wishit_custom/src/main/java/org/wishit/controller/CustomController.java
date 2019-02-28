@@ -1,9 +1,18 @@
 package org.wishit.controller;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -62,15 +71,23 @@ public class CustomController {
 		return map;
 	}
 	
-	@PostMapping("/insert")
-	public void insert( CustomVO custom, AccountVO account ) {
+	@PostMapping( 	value = "/insert", 
+					consumes = "application/json",
+					produces = 	{ MediaType.TEXT_PLAIN_VALUE })
+	public void insert( @RequestBody CustomVO custom ) throws IOException {
+		
+		System.out.println("register...");
+		System.out.println("CustomVO : "+custom);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("custom", custom);
-		map.put("account", account);
+//		map.put("account", account);
+		
+		
 		service.insert(map);
 	}
+	
 	
 	@PostMapping("/update")
 	public void update( CustomVO custom, AccountVO account ) {

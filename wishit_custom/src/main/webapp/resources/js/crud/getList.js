@@ -1,26 +1,40 @@
 
 
 $(document).ready(function(){
-	
+
 	hideTableRow();
 	searchEventBinding();
-	reLoadAction();
+	reLoadAction.list();
+	reLoadAction.detail();
 	
 });
 
 
-function reLoadAction(){
 
-	var busiNum = CookieUtil.get('busiNum');
-	var custom = CookieUtil.get('custom');
+var reLoadAction = {
+	
+	list : function(){
 
-	if( busiNum != null && busiNum != null ){
-		$('#search_busiNum').val(busiNum);
-		$('#search_custom').val(custom);	
+		var busiNum = CookieUtil.get('list.busiNum');
+		var custom = CookieUtil.get('list.custom');
 
-		runGetList(); 
-	}	
+		if( typeof busiNum == 'string' && typeof busiNum == 'string' ){
+			$('#search_busiNum').val(busiNum);
+			$('#search_custom').val(custom);	
+
+			runGetList(); 
+		}	
+	},
+
+	detail : function(){
+		
+		var busiNum = CookieUtil.get('detail.busiNum');
+
+		if (typeof busiNum == 'string') 
+			runGetDetail(busiNum);
+	}
 }
+
 
 
 
@@ -69,28 +83,20 @@ function runGetList(){
 	var busiNum = $('#search_busiNum').val();
 	var custom = $('#search_custom').val();
 	
-	CookieUtil.set('busiNum', busiNum);
-	CookieUtil.set('custom', custom);
+	CookieUtil.set('list.busiNum', busiNum);
+	CookieUtil.set('list.custom', custom);
 
-	customService.getList( 
-		{ "busiNum": busiNum, "custom" : custom },
-							
-		function(data){ sidebarListAppend(data); },
-
-		function(error){ console.log("fail"); }
+	customService.getList( { "busiNum": busiNum, "custom" : custom },
+							function(data){ callbackForList(data); },
+							function(error){ console.log("fail"); }
 						 );
 }
 
 
 
-
-
-function sidebarListAppend(data){
+function callbackForList(data){
 
 	$.each( data, function(index, custom){
-		console.log('data.length : '+data.length);
-		console.log('index : '+index);
-		
 		$('#list_tr' + index ).show();
 		$('#list_link'+index).text(custom.busiNum);
 		$('#list_tr'+index+' .list_td2').text(custom.custom);
@@ -105,6 +111,7 @@ function getDetailEventBinding( index, busiNum ){
 
 	$('#list_link'+index).on( 'click', function(){
 		runGetDetail( busiNum );
+		CookieUtil.set('detail.busiNum', busiNum);
 	});
 }
 

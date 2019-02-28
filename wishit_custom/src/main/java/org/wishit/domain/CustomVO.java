@@ -44,4 +44,6 @@ public class CustomVO {
 	
 	@JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul" )
 	private Date modiInfoDate;
+	
+	private AccountVO accountVO;
 }
