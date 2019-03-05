@@ -31,7 +31,7 @@ var reLoadAction = {
 		var busiNum = CookieUtil.get('detail.busiNum');
 
 		if (typeof busiNum == 'string') 
-			runGetDetail(busiNum);
+			customVoModule.runGetDetail(busiNum);
 	}
 }
 
@@ -63,6 +63,9 @@ var customService = (function(){
 		
 		$.getJSON("/wishit/list/" + busiNum + "/" + custom +".json", 
 			function(data){ 
+				console.log('data : '+Object.keys(data));
+				console.log('data[0] : '+data[0]);
+				console.log('keys(data[0]) : '+Object.keys(data[0]) );
 				if (callback) callback(data); 
 			}
 		).fail( 
@@ -109,7 +112,7 @@ function callbackForList(data){
 function getDetailEventBinding( index, busiNum ){
 
 	$('#list_link'+index).on( 'click', function(){
-		runGetDetail( busiNum );
+		customVoModule.runGetDetail(busiNum);
 		CookieUtil.set('detail.busiNum', busiNum);
 	});
 }

@@ -19,7 +19,7 @@ var customVoModule = (function(){
 		var busiNum = param.busiNum;
 		
 		$.getJSON ("/wishit/detail/" + busiNum + ".json",		
-			function(data){ 
+			function(data){ console.log('data : '+Object.keys(data));
 				if (callback) callback(data); 
 			}
 		).fail( 
@@ -33,7 +33,7 @@ var customVoModule = (function(){
 
 	function runGetDetail(busiNum){
 	
-		getCustomVoModule.getVoByAjax ( 
+		getVoByAjax ( 
 			{ "busiNum" : busiNum },
 			function(data){ 
 				callbackForDetail(data); 
@@ -46,7 +46,7 @@ var customVoModule = (function(){
 	}
 
 
-	function callbackForDetail(data){
+	function callbackForDetail(data){ 
 
 		$('#busiNum').val( data.custom[0].busiNum );
 		$('#custom').val( data.custom[0].custom );
@@ -96,7 +96,8 @@ var customVoModule = (function(){
 
 
 	
-	return { getVoByAjax : getVoByAjax };
+	return { getVoByAjax : getVoByAjax,
+			 runGetDetail : runGetDetail };
 })();
 
 
