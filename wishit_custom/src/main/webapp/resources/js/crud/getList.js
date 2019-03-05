@@ -31,7 +31,7 @@ var reLoadAction = {
 		var busiNum = CookieUtil.get('detail.busiNum');
 
 		if (typeof busiNum == 'string') 
-			customVoModule.runGetDetail(busiNum);
+			getCustomVoModule.runGetDetail(busiNum);
 	}
 }
 
@@ -63,9 +63,6 @@ var customService = (function(){
 		
 		$.getJSON("/wishit/list/" + busiNum + "/" + custom +".json", 
 			function(data){ 
-				console.log('data : '+Object.keys(data));
-				console.log('data[0] : '+data[0]);
-				console.log('keys(data[0]) : '+Object.keys(data[0]) );
 				if (callback) callback(data); 
 			}
 		).fail( 
@@ -96,7 +93,7 @@ function runGetList(){
 
 
 
-function callbackForList(data){
+function callbackForList(data){ 
 
 	$.each( data, function(index, custom){
 		$('#list_tr' + index ).show();
@@ -109,10 +106,10 @@ function callbackForList(data){
 
 
 
-function getDetailEventBinding( index, busiNum ){
+function getDetailEventBinding( index, busiNum ){ 
 
-	$('#list_link'+index).on( 'click', function(){
-		customVoModule.runGetDetail(busiNum);
+	$('#list_link'+index).on( 'click', function(){ 
+		getCustomVoModule.runGetDetail(busiNum);
 		CookieUtil.set('detail.busiNum', busiNum);
 	});
 }

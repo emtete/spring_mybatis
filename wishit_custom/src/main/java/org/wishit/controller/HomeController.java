@@ -29,4 +29,11 @@ public class HomeController {
 		return "customPage/wishit_custom";
 	}
 	
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test(Locale locale, Model model) {
+		
+		
+		return "qunitTest/qunitTest";
+	}
+	
 }

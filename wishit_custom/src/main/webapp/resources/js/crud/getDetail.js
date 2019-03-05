@@ -3,7 +3,7 @@
 /*
 	핵심 키워드 : ajax, rest, detail, get, json, module, customVO, accountVO
 
-	var customVoModule
+	var getCustomVoModule
 		getVoByAjax()
 		runGetDetail()
 		callbackForDetail()
@@ -11,7 +11,7 @@
 */
 
 
-var customVoModule = (function(){
+var getCustomVoModule = (function(){
 	
 
 	function getVoByAjax( param, callback, error ){
@@ -19,7 +19,7 @@ var customVoModule = (function(){
 		var busiNum = param.busiNum;
 		
 		$.getJSON ("/wishit/detail/" + busiNum + ".json",		
-			function(data){ console.log('data : '+Object.keys(data));
+			function(data){ 
 				if (callback) callback(data); 
 			}
 		).fail( 
@@ -31,7 +31,7 @@ var customVoModule = (function(){
 	}
 
 
-	function runGetDetail(busiNum){
+	function runGetDetail(busiNum){ 
 	
 		getVoByAjax ( 
 			{ "busiNum" : busiNum },
@@ -48,39 +48,39 @@ var customVoModule = (function(){
 
 	function callbackForDetail(data){ 
 
-		$('#busiNum').val( data.custom[0].busiNum );
-		$('#custom').val( data.custom[0].custom );
-		$('#shortt').val( data.custom[0].shortt );
-		$('#ceo').val( data.custom[0].ceo );
-		$('#chargePerson').val( data.custom[0].chargePerson );
-		$('#busiCondition').val( data.custom[0].busiCondition );
-		$('#item').val( data.custom[0].item );
-		$('#postNum').val( data.custom[0].postNum );
-		$('#addr1').val( data.custom[0].addr1 );
-		$('#addr2').val( data.custom[0].addr2 );
-		$('#tel').val( data.custom[0].tel );
-		$('#fax').val( data.custom[0].fax );
-		$('#homepage').val( data.custom[0].homepage );
-		$('#countryEng').val( data.custom[0].countryEng );
-		$('#countryKor').val( data.custom[0].countryKor );
-		$('#contractPeriodS').val( data.custom[0].contractPeriodS );
-		$('#contractPeriodE').val( data.custom[0].contractPeriodE );
-		$('#regiInfoMan').val( data.custom[0].regiInfoMan );
-		$('#regiInfoDate').val( data.custom[0].regiInfoDate );
-		$('#modiInfoMan').val( data.custom[0].modiInfoMan );
-		$('#modiInfoDate').val( data.custom[0].modiInfoDate );
+		$('#busiNum').val( data.busiNum );
+		$('#custom').val( data.custom );
+		$('#shortt').val( data.shortt );
+		$('#ceo').val( data.ceo );
+		$('#chargePerson').val( data.chargePerson );
+		$('#busiCondition').val( data.busiCondition );
+		$('#item').val( data.item );
+		$('#postNum').val( data.postNum );
+		$('#addr1').val( data.addr1 );
+		$('#addr2').val( data.addr2 );
+		$('#tel').val( data.tel );
+		$('#fax').val( data.fax );
+		$('#homepage').val( data.homepage );
+		$('#countryEng').val( data.countryEng );
+		$('#countryKor').val( data.countryKor );
+		$('#contractPeriodS').val( data.contractPeriodS );
+		$('#contractPeriodE').val( data.contractPeriodE );
+		$('#regiInfoMan').val( data.regiInfoMan );
+		$('#regiInfoDate').val( data.regiInfoDate );
+		$('#modiInfoMan').val( data.modiInfoMan );
+		$('#modiInfoDate').val( data.modiInfoDate );
 
-		$('input[name=coYn]input[value='+ data.custom[0].coYn +']').attr('checked', 'checked')
-		$('input[name=foreignYn]input[value='+ data.custom[0].foreignYn +']').attr('checked', 'checked')
-		$('#taxYn').val( data.custom[0].taxYn );
+		$('input[name=coYn]input[value='+ data.coYn +']').attr('checked', 'checked')
+		$('input[name=foreignYn]input[value='+ data.foreignYn +']').attr('checked', 'checked')
+		$('#taxYn').val( data.taxYn );
 		
-		$('#specialRelation').attr( 'checked', ynToBool( data.custom[0].specialRelation ) );
-		$('#tradeStop').val( 'checked', ynToBool( data.custom[0].tradeStop ) );
+		$('#specialRelation').attr( 'checked', ynToBool( data.specialRelation ) );
+		$('#tradeStop').val( 'checked', ynToBool( data.tradeStop ) );
 
 		
-		$('#factory').val( data.account[0].factory );
-		$('#tradeBank').val( data.account[0].tradeBank );
-		$('#accountNum').val( data.account[0].accountNum );
+		$('#factory').val( data.accountVO.factory );
+		$('#tradeBank').val( data.accountVO.tradeBank );
+		$('#accountNum').val( data.accountVO.accountNum );
 	}
 
 
