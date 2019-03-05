@@ -61,14 +61,9 @@ public class CustomController {
 	
 	@GetMapping( value = "/detail/{busiNum}",
 			produces = 	MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public Map<String, Object> get(@PathVariable("busiNum") String busiNum ) {
-		
-		Map<String, Object> map = service.get(busiNum);
-		
-		System.out.println( map.get("custom") );
-		System.out.println( map.get("account") );
-		
-		return map;
+	public CustomVO get(@PathVariable("busiNum") String busiNum ) {
+	
+		return service.get(busiNum);
 	}
 	
 	@PostMapping( 	value = "/insert", 

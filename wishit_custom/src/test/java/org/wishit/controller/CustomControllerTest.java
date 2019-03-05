@@ -52,10 +52,10 @@ public class CustomControllerTest {
 				);
 	}
 	
-//	@Test
+	@Test
 	public void getTest() throws Exception {
 		log.info( mockMvc.perform(MockMvcRequestBuilders.get("/wishit/get")
-				.param("busiNum", "222-22-22222")	)
+				.param("busiNum", "111-11-11111")	)
 				.andReturn()
 				.getModelAndView()
 				.getModelMap()
@@ -138,7 +138,7 @@ public class CustomControllerTest {
 	}
 	
 	
-	@Test
+//	@Test
 	public void deleteTest() throws Exception{
 		
 		mockMvc.perform(MockMvcRequestBuilders.post("/wishit/delete")

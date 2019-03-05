@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import org.zerock.domain.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -34,15 +35,22 @@ public class BoardControllerTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
-//	@Test
+	@Test
 	public void testList() throws Exception {
 		
+//		Criteria cri = new Criteria();
+//		cri.setAmount(10);
+//		cri.setPageNum(2);
+		
 		log.info(
-				mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
-				.andReturn()
-				.getModelAndView()
-				.getModelMap()
-				);
+				mockMvc.perform(MockMvcRequestBuilders.get("/board/list")
+									.param("amount", "10")
+									.param("pageNum", "2")
+								)
+								.andReturn()
+								.getModelAndView()
+								.getModelMap()
+								);
 	}
 	
 //	@Test
@@ -84,7 +92,7 @@ public class BoardControllerTests {
 				);
 	}
 	
-	@Test
+//	@Test
 	public void testRemove() throws Exception {
 		
 		log.info( mockMvc.perform( MockMvcRequestBuilders

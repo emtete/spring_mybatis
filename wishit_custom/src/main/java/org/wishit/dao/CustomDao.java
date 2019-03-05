@@ -14,7 +14,7 @@ import lombok.Setter;
 public interface CustomDao {
 	
 	public List<CustomVO> getList(CustomVO custom);
-	public Map<String, Object> get(String busiNum);
+	public CustomVO get(String busiNum);
 	public void insert(Map map);
 	public boolean update(Map map);
 	public boolean delete(String busiNum);

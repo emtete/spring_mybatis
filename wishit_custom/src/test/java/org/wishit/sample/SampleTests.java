@@ -75,6 +75,7 @@ public class SampleTests {
 	
 //	@Test
 	public void jdbcTests() {
+
 		
 		try( Connection con = dataSource.getConnection() ){
 			log.info(con);
@@ -84,7 +85,7 @@ public class SampleTests {
 		
 	}
 	
-	@Test
+//	@Test
 	public void sqlSessionTest() {
 		
 		try(	SqlSession sqlSession = sqlSessionFactory.openSession();

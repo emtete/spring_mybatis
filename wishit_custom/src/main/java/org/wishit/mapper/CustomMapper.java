@@ -8,7 +8,7 @@ public interface CustomMapper {
 
 	public String getTime2();
 	public List<CustomVO> getList(CustomVO custom);
-	public List<CustomVO> get(String busiNum);
+	public CustomVO get(String busiNum);
 	public void insert(CustomVO custom);
 //	public CustomVO insertSelectKey();
 	public int update(CustomVO custom);

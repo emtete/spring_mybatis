@@ -8,7 +8,7 @@ import org.wishit.domain.CustomVO;
 public interface CustomService {
 	
 	public List<CustomVO> getList(CustomVO custom);
-	public Map<String, Object> get(String busiNum);
+	public CustomVO get(String busiNum);
 	public void insert(Map map);
 	public boolean update(Map map);
 	public boolean delete(String busiNum);

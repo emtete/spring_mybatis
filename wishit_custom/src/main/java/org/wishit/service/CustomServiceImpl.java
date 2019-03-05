@@ -23,7 +23,7 @@ public class CustomServiceImpl implements CustomService {
 	}
 
 	@Override
-	public Map<String, Object> get(String busiNum) {
+	public CustomVO get(String busiNum) {
 
 		return dao.get(busiNum);
 	}

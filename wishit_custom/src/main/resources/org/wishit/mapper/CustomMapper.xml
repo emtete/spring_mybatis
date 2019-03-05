@@ -5,8 +5,8 @@
 <mapper namespace="org.wishit.mapper.CustomMapper">
 
 
-	<resultMap id="customResultMap" type="org.wishit.domain.CustomVO">
-	  	<id property="busiNum" column="BUSI_NUM" />
+	<resultMap id="customResultMap" type="org.wishit.domain.CustomVO" >
+	  	<result property="busiNum" column="BUSI_NUM" />
 		<result property="custom" column="CUSTOM" />
 		<result property="shortt" column="SHORTT" />
 		<result property="ceo" column="CEO" />
@@ -32,6 +32,12 @@
 		<result property="regiInfoDate" column="REGI_INFO_DATE" />
 		<result property="modiInfoMan" column="MODI_INFO_MAN" />
 		<result property="modiInfoDate" column="MODI_INFO_DATE" />
+		<association property="accountVO" javaType="org.wishit.domain.AccountVO" columnPrefix="A_" >
+			<result property="busiNum" column="BUSI_NUM"  />
+			<result property="factory" column="FACTORY" />
+			<result property="tradeBank" column="TRADE_BANK" />
+			<result property="accountNum" column="ACCOUNT_NUM" />
+		</association>
 	</resultMap>
 
 		
@@ -46,39 +52,20 @@
 	
 
 	<select id="get" resultMap="customResultMap">
-		select * from custom where busi_num = #{busiNum}
+		<!-- select * from custom where busi_num = #{busiNum} -->
 		
-		<!-- SELECT 
-			BUSI_NUM,
-			CUSTOM,
-			SHORTT,
-			CEO,
-			CHARGE_PERSON,
-			BUSI_CONDITION,
-			ITEM,
-			POST_NUM,
-			ADDR1,
-			ADDR2,
-			TEL,
-			FAX,
-			HOMEPAGE,
-			CO_YN,
-			FOREIGN_YN,
-			TAX_YN,
-			COUNTRY_ENG,
-			COUNTRY_KOR,
-			SPECIAL_RELATION,
-			TRADE_STOP,
-			TO_CHAR(CONTRACT_PERIOD_S, 'YYYY/MM/DD') CONTRACT_PERIOD_S,
-			TO_CHAR(CONTRACT_PERIOD_E,  'YYYY/MM/DD') CONTRACT_PERIOD_E,
-			REGI_INFO_MAN,
-			TO_CHAR(REGI_INFO_DATE, 'YYYY/MM/DD') REGI_INFO_DATE,
-			MODI_INFO_MAN,
-			TO_CHAR(MODI_INFO_DATE, 'YYYY/MM/DD') MODI_INFO_DATE
-		FROM 
-			CUSTOM
-		WHERE 
-			BUSI_NUM = #{busiNum} -->
+		select 
+		    C.*,
+		    A.BUSI_NUM A_BUSI_NUM,
+		    A.FACTORY A_FACTORY,
+		    A.TRADE_BANK A_TRADE_BANK,
+		    A.ACCOUNT_NUM A_ACCOUNT_NUM
+		from
+		    custom c, account a
+		where 
+		    c.busi_num = a.busi_num
+		and
+		    c.busi_num = #{busiNum}
 	</select>
 	
 	<insert id="insert" parameterType="org.wishit.domain.CustomVO">

@@ -49,14 +49,10 @@ public class CustomDaoTest {
 //	@Test
 	public void getTest() {
 
-		Map<String, Object> map = dao.get("222-22-22222");
-
-		List<CustomVO> customList = (List<CustomVO>)map.get("custom");
-		List<AccountVO> accountList = (List<AccountVO>)map.get("account");
+		CustomVO custom = dao.get("111-11-11111");
 		
 		System.out.println("\n\n\n");
-		customList.forEach( custom -> System.out.println(custom) );
-		accountList.forEach( account -> System.out.println(account) );
+		System.out.println(custom);
 	}
 	
 	
@@ -64,7 +60,7 @@ public class CustomDaoTest {
 		
 		CustomVO custom = new CustomVO();
 		
-		custom.setBusiNum("911-11-11111");
+		custom.setBusiNum("222-11-11111");
 		custom.setCustom("73");
 		custom.setShortt("마트");
 		custom.setCeo("ceo");
@@ -96,14 +92,14 @@ public class CustomDaoTest {
 		AccountVO account = new AccountVO();
 		
 		account.setAccountNum("303832922");
-		account.setBusiNum("911-11-11111");
+		account.setBusiNum("222-11-11111");
 		account.setFactory("77장");
 		account.setTradeBank("7수");
 	
 	return account;
 }
 
-	@Test
+//	@Test
 	public void insertTest() {
 		
 		AccountVO account = genAccountVO();

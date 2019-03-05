@@ -38,13 +38,13 @@ public class CustomDaoImpl implements CustomDao {
 
 	
 	@Override
-	public Map<String, Object> get(String busiNum) {
+	public CustomVO get(String busiNum) {
 		
-		Map map = new HashMap<String, Object>();
-		map.put("custom", customMapper.get(busiNum));
-		map.put("account", accountMapper.get(busiNum));
+//		Map map = new HashMap<String, Object>();
+//		map.put("custom", customMapper.get(busiNum));
+//		map.put("account", accountMapper.get(busiNum));
 		
-		return map;
+		return customMapper.get(busiNum);
 	}
 
 	@Override

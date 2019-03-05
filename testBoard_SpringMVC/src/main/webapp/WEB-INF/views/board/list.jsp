@@ -4,20 +4,7 @@
 <%@ include file = "../includes/header.jsp" %>
 
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
 
-  <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-  <p class="mb-4">Board Tables</p>
-
-  <!-- DataTales Example -->
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-	    <div class="panel-heading" >Board List Page
-	      <button id='regBtn' type="button" class="btn btn-xs text-right">Register New Button</button>
-	    </div>
-    </div>
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -42,7 +29,7 @@
               
               <td><c:out value="${board.writer}"/></td>
               
-              <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}"/></td>
+              <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}"/></td>
               <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}"/></td>
             </tr>
             </c:forEach>
