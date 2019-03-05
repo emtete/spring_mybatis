@@ -107,11 +107,11 @@
 		<form id="detailForm" name="detailForm">
 			<table>
 				<tr>
-					<td>사업자번호</td>
+					<td style="width:100px;">사업자번호</td>
 					<td> 
 						<input type="text" id="busiNum" name="busiNum">
 					</td>
-					<td>약	칭</td>
+					<td style="width:100px;">약	칭</td>
 					<td>
 						<input type="text" id="shortt" name="shortt">
 					</td>
