@@ -18,8 +18,12 @@ jex는 servlet-context.xml, root-context.xml, web.xml을 자바 파일을 통해
 
 Issue
 
-[1. [ ING.. ] Javascript CleanCode issue ( 2019.02.23 )](https://www.evernote.com/l/Aj3lECLJaJJFZq_gdV4s6SWq-2zyUEvLBQ4)<br/>
-[2. [ ING.. ]새로고침 할 경우, Form Data 전부 사라짐 ( 2019.02.22 )](https://www.evernote.com/l/Aj10HEQkbCxKXLucK4duu77kpopvOynpud8)<br/>
-[3. getList 게시글, 두번째 검색시 예전 생성된 html이 계속 남아있음.( 2019.02.22 )](https://www.evernote.com/l/Aj0v4FdJJK1NfIsxH0hwdduTUoD1eR5a-ag)<br/>
-[4. Transfer dateType Between ajax and spring by json.( 2019.02.22 )](https://www.evernote.com/l/Aj3Q9A_P9SRKO6TMUR7Lukemwreaqj-wpGo)<br/>
-[5. url : Rest/Uri/value1/value2, value1 null일 경우 Error( 2019.02.22 )](https://www.evernote.com/l/Aj0VXxSJQsNLQJizTspUkkuNoW7fx0FL7hA)<br/>
+[[ING] 19/02/26) 컨트롤러에서 바인딩 안되는 상황](https://www.evernote.com/l/Aj0bCVTx8qNMGrHh-LvoD3UaedfZVuBgwhQ)<br/>
+[19/02/26) Jquery의 prop() & attr()](https://www.evernote.com/l/Aj1iOkm_8PRGr6L1N4dN-3Pc48feUhe7k6A)<br/>
+[19/02/26) JavaScript에서 JSTL로 데이터를 보낼 수 없다.](https://www.evernote.com/l/Aj3mqxxJ3xpEvJXwHtAfN6OQiFhI4F6H1N4)<br/>
+[19/02/26) FORM 데이터, JSON형식으로 바꾸기](https://www.evernote.com/l/Aj0JE19PQipEe6SfcX7d9lysX71b00Jh_-M)<br/>
+[19/02/26) Date형 변수 바인딩](https://www.evernote.com/l/Aj0kIbuHVv5NzJ-eG2hgUAbq7J59Tp6p8iA)<br/>
+[19/02/26) Cookie의 활용](https://www.evernote.com/l/Aj00rAvrvBJBkr-gyuvhOUneoInnGy8J1u8)<br/>
+[19/02/24) Table Row 숨겼다가 불러왔을 때, text 안보이는 문제](https://www.evernote.com/l/Aj2Yw0-v_NdNkptCQ-ClTciNHnbMW9941-M)<br/>
+[19/02/22) date자료형, Ajax로 서버에서 클라이언트로 보낼 때 엉뚱한 값 나오는 문제](https://www.evernote.com/l/Aj3Q9A_P9SRKO6TMUR7Lukemwreaqj-wpGo)<br/>
+[19/02/22) 2번 이상 검색시, 예전에 검색해서 생성된 html 태그가 남아있다.](https://www.evernote.com/l/Aj0v4FdJJK1NfIsxH0hwdduTUoD1eR5a-ag)<br/>
