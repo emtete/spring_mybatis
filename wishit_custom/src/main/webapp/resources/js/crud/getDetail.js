@@ -1,15 +1,5 @@
 
 
-/*
-	핵심 키워드 : ajax, rest, detail, get, json, module, customVO, accountVO
-
-	var getCustomVoModule
-		getVoByAjax()
-		runGetDetail()
-		callbackForDetail()
-		ynToBool()	
-*/
-
 
 var getCustomVoModule = (function(){
 	

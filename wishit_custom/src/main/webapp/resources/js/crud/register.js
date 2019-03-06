@@ -2,62 +2,99 @@
 
 $(document).ready(function(){
 
+
 	saveEventBinding();
-	setRegiButton();
-	setResetButton();
+	// setRegiButton();
+	// setResetButton();
+
+	buttonEvent.resetEventBinding();
+	buttonEvent.setButtonRegiOrModi();
+
 
 
 
 });
 
 
+var buttonEvent = {
 
-function setResetButton(){
-
-	$('#resetButton').on('click', function(){
-		CookieUtil.unset('list.busiNum');
-		CookieUtil.unset('list.custom');
-		CookieUtil.unset('detail.busiNum');
-		window.location.reload();
-	});
-}
-
-
-
-function setRegiButton(){
-
-	var detail = CookieUtil.get('detail.busiNum');
-	(typeof detail == 'string') ? setBtnEvnt(update, '수정') : setBtnEvnt(regiRun, '등록'); 
-
-}
-
-
-
-function setBtnEvnt(setBtn, value){
 	
-	$('#regiButton').on('click', function(){
-			setBtn();
-	});
+	resetEventBinding : function(){
+		$('#resetButton').on('click', function(){
+			eventAfter();
+		});
 
-	$('#regiButton').attr('value',value);
+		var eventAfter = function (){
+			CookieUtil.unset('list.busiNum');
+			CookieUtil.unset('list.custom');
+			CookieUtil.unset('detail.busiNum');
+			window.location.reload();
+		}
+	},
+
+
+	setButtonRegiOrModi : function(){
+		var detailCookie = CookieUtil.get('detail.busiNum');
+		( typeof detailCookie == 'string' ) ? below( update, '수정' ) 
+											: below( regiCustomVoModule.regiRun, '등록' ); 
+
+		function below( btnEvntBinding, value ){
+			$('#regiButton').attr('value',value);
+			$('#regiButton').on('click', function(){
+				btnEvntBinding();
+			});
+		}
+	}
+
+
 }
 
+// function setResetButton(){
+
+// 	$('#resetButton').on('click', function(){
+// 		CookieUtil.unset('list.busiNum');
+// 		CookieUtil.unset('list.custom');
+// 		CookieUtil.unset('detail.busiNum');
+// 		window.location.reload();
+// 	});
+// }
 
 
-function regiRun(){
-	registerService.register(regiCallback);
-}
 
-function regiCallback(result){
-	console.log(result);
-}
+// function setRegiButton(){
+
+// 	var detail = CookieUtil.get('detail.busiNum');
+// 	(typeof detail == 'string') ? setBtnEvnt(update, '수정') : setBtnEvnt(regiRun, '등록'); 
+
+// }
 
 
-var registerService = ( function(){
 
-	function register(callback, error){
+// function setBtnEvnt(setBtn, value){
+	
+// 	$('#regiButton').on('click', function(){
+// 			setBtn();
+// 	});
 
-		var formObj = serializeObject( $('#detailForm') );
+// 	$('#regiButton').attr('value',value);
+// }
+
+
+
+
+
+
+
+
+var regiCustomVoModule = ( function(){
+
+	function regiRun(){
+		regiCustomVoModule.register(regiCallback);
+	}
+
+	function register(regiCallback, error){
+
+		var formObj = formToObject( $('#detailForm') );
 
 		$.ajax({
 			type : 'post',
@@ -67,7 +104,7 @@ var registerService = ( function(){
 			dataType : "json",
 			success : function(result, status, xhr){
 
-					if (callback) callback(result);
+					if (regiCallback) regiCallback(result);
 			},
 			error : function(xhr, status, er){
 
@@ -76,59 +113,81 @@ var registerService = ( function(){
 		});
 	}
 
-	return { register : register };
+
+	function regiCallback(result){
+		console.log(result);
+	}
+
+
+
+// argument : $('form')
+// return 	: CustomVO
+	function formToObject( originalFormObj ){
+	
+		var sArray = originalFormObj.serializeArray();
+		var customVO = new Object;
+
+		$.each(sArray, function(index, data){
+			customVO[data.name] = data.value;
+		});
+
+		customVO = objToHasA(customVO);
+
+		return customVO;
+	}
+
+
+	/*
+	자료구조 변경
+		customVO 에 accountVO의 필드까지 섞여있는 형태를
+		accountVO 와 has a 관계로 변경한다.
+		
+		argument 	: customVO( accountVO필드와 섞여 있음 )
+		return		: customVO( customVO has a accountVO )
+	*/
+	function objToHasA( custom ){
+
+		var account = new Object;
+
+		account['factory'] =  custom['factory'];
+		account['tradeBank'] = custom['tradeBank'];
+		account['accountNum'] = custom['accountNum'];
+		account['busiNum'] = custom['busiNum'];
+
+		delete custom['factory'];
+		delete custom['tradeBank'];
+		delete custom['accountNum'];
+
+		custom['accountVO'] = account;
+
+		/*
+			sr and ts is CheckkBox
+		*/
+		var sr = $('#specialRelation');
+		var ts = $('#tradeStop');
+
+		( sr.prop('checked') )	? custom['specialRelation'] = 'Y' 
+								: custom['specialRelation'] = 'N';
+
+		( ts.prop('checked') )	? custom['tradeStop'] = 'Y'
+								: custom['tradeStop'] = 'N';
+
+		return custom;
+	}
+
+
+	return { register 		: 	register,
+			 regiRun 		: 	regiRun,
+			 regiCallback 	: 	regiCallback,
+			 formToObject	:	formToObject,
+			 objToHasA 		: 	objToHasA };
 })();
 
 
 
-function serializeObject(jqueryObject){
-	
-	var arr = jqueryObject.serializeArray();
-	var custom = new Object;
 
-	$.each(arr, function(index, data){
-		custom[data.name] = data.value;
-	});
 
-	custom = insertObject(custom);
 
-	return custom;
-}
-
-/*
-	문제
-		custom과 account를
-		has a 관계 구조로 수정한다.
-*/
-function insertObject(custom){
-
-	var account = new Object;
-
-	account['factory'] =  custom['factory'];
-	account['tradeBank'] = custom['tradeBank'];
-	account['accountNum'] = custom['accountNum'];
-	account['busiNum'] = custom['busiNum'];
-
-	delete custom['factory'];
-	delete custom['tradeBank'];
-	delete custom['accountNum'];
-
-	custom['accountVO'] = account;
-
-	/*
-		sr and ts is CheckkBox
-	*/
-	var sr = $('#specialRelation');
-	var ts = $('#tradeStop');
-
-	( sr.prop('checked') )	? custom['specialRelation'] = 'Y' 
-							: custom['specialRelation'] = 'N';
-
-	( ts.prop('checked') )	? custom['tradeStop'] = 'Y'
-							: custom['tradeStop'] = 'N';
-
-	return custom;
-}
 
 
 
@@ -136,7 +195,7 @@ function insertObject(custom){
 
 
 function update(){
-
+	alert('update');
 }
 
 
@@ -159,35 +218,35 @@ function saveEventBinding(){
 //validation check 에 필요한 textFeild의 id 와 제한글자수를 매칭하여 객체로 저장한다.
 function generateObject(){
 	
-	var c_txt_vo = new Object(); // custom_text_vo
-	c_txt_vo['busiNum'] = 20;
-	c_txt_vo['custom'] = 20;
-	c_txt_vo['shortt'] = 20;
-	c_txt_vo['ceo'] = 10;
-	c_txt_vo['chargePerson'] = 10;
-	c_txt_vo['busiCondition'] = 10;
-	c_txt_vo['item'] = 10;
-	c_txt_vo['postNum'] = 10;
-	c_txt_vo['addr1'] = 80;
-	c_txt_vo['addr2'] = 80;
-	c_txt_vo['tel'] = 10;
-	c_txt_vo['fax'] = 10;
-	c_txt_vo['homepage'] = 20;
-	// c_txt_vo['coYn']
-	// c_txt_vo['foreignYn']
-	// c_txt_vo['taxYn']
-	c_txt_vo['countryEng'] = 20;
-	c_txt_vo['countryKor'] = 20;
-	// c_txt_vo['specialRelation']
-	// c_txt_vo['tradeStop']
-	// c_txt_vo['contractPeriodS']
-	// c_txt_vo['contractPeriodE']
-	c_txt_vo['regiInfoMan'] = 10;
-	// c_txt_vo['regiInfoDate']
-	c_txt_vo['modiInfoMan'] = 10;
-	// c_txt_vo['modiInfoDate']
+	var customVO = new Object(); // custom_text_vo
+	customVO['busiNum'] = 20;
+	customVO['custom'] = 20;
+	customVO['shortt'] = 20;
+	customVO['ceo'] = 10;
+	customVO['chargePerson'] = 10;
+	customVO['busiCondition'] = 10;
+	customVO['item'] = 10;
+	customVO['postNum'] = 10;
+	customVO['addr1'] = 80;
+	customVO['addr2'] = 80;
+	customVO['tel'] = 10;
+	customVO['fax'] = 10;
+	customVO['homepage'] = 20;
+	// customVO['coYn']
+	// customVO['foreignYn']
+	// customVO['taxYn']
+	customVO['countryEng'] = 20;
+	customVO['countryKor'] = 20;
+	// customVO['specialRelation']
+	// customVO['tradeStop']
+	// customVO['contractPeriodS']
+	// customVO['contractPeriodE']
+	customVO['regiInfoMan'] = 10;
+	// customVO['regiInfoDate']
+	customVO['modiInfoMan'] = 10;
+	// customVO['modiInfoDate']
 
-	return c_txt_vo;
+	return customVO;
 }
 
 
@@ -197,11 +256,11 @@ function generateObject(){
 //반복문을 돌려서 validation check를 수행한다.
 function run_val(){
 
-	var c_txt_vo = generateObject();
+	var customVO = generateObject();
 
-	for( vo in c_txt_vo ){
+	for( vo in customVO ){
 
-		if( !validation_check( vo, c_txt_vo[vo] ) ){
+		if( !validation_check( vo, customVO[vo] ) ){
 			return false;
 		}		
 	}
